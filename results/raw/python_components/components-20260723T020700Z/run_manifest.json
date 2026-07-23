@@ -1,0 +1,20 @@
+{
+  "artifacts": {
+    "processed/python_components/components-20260723T020700Z/component_conformance_summary.csv": "a9c424b586dc27173b8f28b4fec3646eed63f259ea3b036bfcf0e0e60d7acd30",
+    "raw/python_components/components-20260723T020700Z/component_conformance.csv": "4d87522b69f150f9e99f846564d87bc4a5571dc30467104ee7571c13adcce1bb"
+  },
+  "created_at": "2026-07-23T02:07:00.239998+00:00",
+  "environment": {
+    "digest": "SHA-256",
+    "master_seed": 20260722,
+    "merkle_odd_leaf_rule": "duplicate last node",
+    "python": "3.12.13",
+    "repetitions_per_case": 200,
+    "signature": "Ed25519",
+    "version_transition": "atomic compare-and-swap"
+  },
+  "experiment": "python",
+  "provenance": "measured",
+  "run_id": "components-20260723T020700Z",
+  "schema_version": "1.0"
+}

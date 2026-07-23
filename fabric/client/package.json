@@ -1,0 +1,17 @@
+{
+  "name": "tarms-fabric-workloads",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/cli.js",
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "1.14.4",
+    "@hyperledger/fabric-gateway": "1.11.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

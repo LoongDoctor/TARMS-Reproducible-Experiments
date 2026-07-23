@@ -1,0 +1,7 @@
+case,expected_result,observed_result,matching_executions,total_executions,proportion_matching
+consistent_set,accepted,accepted,200,200,1.0
+counter_field_swap,aborted,aborted,200,200,1.0
+payload_modification,aborted,aborted,200,200,1.0
+record_deletion,aborted,aborted,200,200,1.0
+record_insertion,aborted,aborted,200,200,1.0
+storage_reordering,accepted,accepted,200,200,1.0

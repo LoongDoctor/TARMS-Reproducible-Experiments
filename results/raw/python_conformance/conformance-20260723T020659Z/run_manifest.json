@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "processed/python_conformance/conformance-20260723T020659Z/late_update_conformance_summary.csv": "b37e9f60a05392d58dfc48f19934dafce1baa01817dfe71efa778ecc0f26ec8c",
+    "raw/python_conformance/conformance-20260723T020659Z/late_update_conformance.csv": "b2515ffe070136ba04d67931f520cce16962a0507a67d1c93ca56521fba9472c"
+  },
+  "created_at": "2026-07-23T02:06:59.667216+00:00",
+  "environment": {
+    "canonical_order": "lexicographic canonical event bytes",
+    "master_seed": 20260722,
+    "odd_leaf_rule": "duplicate last node",
+    "python": "3.12.13",
+    "repetitions_per_case": 200
+  },
+  "experiment": "python",
+  "provenance": "measured",
+  "run_id": "conformance-20260723T020659Z",
+  "schema_version": "1.0"
+}

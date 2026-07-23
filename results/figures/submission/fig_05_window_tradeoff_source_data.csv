@@ -1,0 +1,7 @@
+window_min,anchors_day,anchor_bytes,modeled_bytes_day,modeled_kib_day,mean_batching_wait_s,maximum_batching_wait_s,assumption
+1,1440,614,884160,863.4375,30.0,60.0,uniform arrivals; one anchor+latest payload per window
+5,288,614,176832,172.6875,150.0,300.0,uniform arrivals; one anchor+latest payload per window
+10,144,614,88416,86.34375,300.0,600.0,uniform arrivals; one anchor+latest payload per window
+15,96,614,58944,57.5625,450.0,900.0,uniform arrivals; one anchor+latest payload per window
+30,48,614,29472,28.78125,900.0,1800.0,uniform arrivals; one anchor+latest payload per window
+60,24,614,14736,14.390625,1800.0,3600.0,uniform arrivals; one anchor+latest payload per window

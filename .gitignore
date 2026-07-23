@@ -1,0 +1,22 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Node.js
+fabric/**/node_modules/
+npm-debug.log*
+
+# Local experiment outputs and credentials
+reproduced_results/
+results/raw/fabric/
+results/figures/preview/
+fabric/network/.env.fabric
+
+# Local caches and operating-system files
+.cache/
+tmp/
+.DS_Store

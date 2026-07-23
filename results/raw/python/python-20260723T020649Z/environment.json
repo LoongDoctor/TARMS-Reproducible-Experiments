@@ -1,0 +1,22 @@
+{
+  "batch_sizes": [
+    16,
+    64,
+    256,
+    1024,
+    2048,
+    4096
+  ],
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "cryptography": "46.0.0",
+  "implementation": "CPython",
+  "logical_cpus": 9,
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+  "profile": "submission",
+  "python": "3.12.13",
+  "repetitions": 200,
+  "timer": "time.perf_counter_ns",
+  "warmups": 20
+}

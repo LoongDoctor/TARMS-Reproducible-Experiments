@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tarms-experiments"
+version = "1.0.0"
+description = "Reproducible experiments for TARMS"
+requires-python = ">=3.12"
+dependencies = [
+  "cryptography>=46.0",
+  "matplotlib>=3.10",
+  "numpy>=2.3",
+  "pandas>=2.2",
+  "SciencePlots>=2.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

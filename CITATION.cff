@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software or its bundled data, please cite the associated TARMS work and this software release."
+title: "TARMS Reproducible Experiments"
+type: software
+version: 1.0.0
+date-released: 2026-07-23
+license: Apache-2.0
+authors:
+  - given-names: Ziyun
+    family-names: Liu
+  - given-names: Gang
+    family-names: Zhou
+  - given-names: Weijun
+    family-names: Zhao
+  - given-names: Dong
+    family-names: Xie
+  - given-names: Longbo
+    family-names: Han
+keywords:
+  - reproducible research
+  - remote respiratory monitoring
+  - medical Internet of Things
+  - Merkle tree
+  - Hyperledger Fabric

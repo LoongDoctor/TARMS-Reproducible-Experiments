@@ -1,0 +1,12 @@
+component,case,expected_result,observed_result,matching_executions,total_executions,proportion_matching
+AcceptOnce,counter_conflict,rejected,rejected,200,200,1.0
+AcceptOnce,first_admission,accepted,accepted,200,200,1.0
+AcceptOnce,idempotent_retransmission,accepted,accepted,200,200,1.0
+Latest CAS,skipped_version,rejected,rejected,200,200,1.0
+Latest CAS,stale_latest_pointer,rejected,rejected,200,200,1.0
+Latest CAS,valid_cas,accepted,accepted,200,200,1.0
+Merkle proof,modified_merkle_proof,rejected,rejected,200,200,1.0
+Merkle proof,valid_merkle_proof,accepted,accepted,200,200,1.0
+Signature,forged_signature,rejected,rejected,200,200,1.0
+Signature,modified_signed_payload,rejected,rejected,200,200,1.0
+Signature,valid_signature,accepted,accepted,200,200,1.0
