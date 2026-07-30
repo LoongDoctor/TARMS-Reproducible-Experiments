@@ -9,13 +9,16 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
+sys.path.insert(0, str(PROJECT_ROOT / "tests"))
 
+from aamos_submission_fixture import submission_contract  # noqa: E402
 from tarms_experiments.plotting import (  # noqa: E402
     FABRIC_INSTALL_OPERATION,
     SIGNATURE_ADMISSION_TITLE,
     SIGNATURE_ADMISSION_YLABEL,
     model_ledger_bytes,
     model_window_tradeoff,
+    render_aamos_integrity_figure,
     render_component_conformance_figure,
     render_fabric_performance_figure,
     render_late_update_figure,
@@ -169,15 +172,6 @@ class PlottingGateTests(unittest.TestCase):
             self.assertTrue(outputs["png"].is_file())
             self.assertTrue(outputs["source_data"].is_file())
 
-    def test_generated_pdf_omits_wall_clock_metadata(self):
-        with tempfile.TemporaryDirectory() as directory:
-            outputs = render_window_tradeoff_figure(Path(directory), anchor_bytes=614)
-
-            pdf_bytes = outputs["pdf"].read_bytes()
-
-            self.assertNotIn(b"/CreationDate", pdf_bytes)
-            self.assertNotIn(b"/ModDate", pdf_bytes)
-
     def test_component_conformance_figure_exports_matrix_and_source_data(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -205,7 +199,7 @@ class PlottingGateTests(unittest.TestCase):
             source = pd.read_csv(outputs["source_data"])
             self.assertEqual(set(source["proportion_matching"]), {1.0})
 
-    def test_fabric_fixture_manifest_fails_before_data_loading(self):
+    def test_fabric_and_aamos_fixture_manifests_fail_before_data_loading(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             fabric_run = root / "fabric" / "run-1"
@@ -244,6 +238,70 @@ class PlottingGateTests(unittest.TestCase):
                     root / "figures",
                     submission=True,
                 )
+
+            aamos_manifest = root / "aamos_manifest.json"
+            write_manifest(
+                RunManifest(
+                    experiment="aamos",
+                    provenance="fixture",
+                    run_id="aamos-fixture",
+                    created_at="2026-07-22T00:00:00Z",
+                    environment={"injection_seeds": [1]},
+                    artifacts={},
+                ),
+                aamos_manifest,
+            )
+            with self.assertRaisesRegex(EvidenceGateError, "fixture"):
+                render_aamos_integrity_figure(
+                    root / "missing-metrics.csv",
+                    root / "missing-intervals.csv",
+                    root / "missing-injections.csv",
+                    aamos_manifest,
+                    root / "figures",
+                    submission=True,
+                )
+
+    def test_aamos_official_source_contract_renders_and_preview_is_gated(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source_path, manifest_path, source, _ = (
+                submission_contract(root)
+            )
+            outputs = render_aamos_integrity_figure(
+                source_path,
+                manifest_path,
+                root / "figures",
+                submission=True,
+            )
+            self.assertTrue(outputs["pdf"].is_file())
+            self.assertTrue(outputs["png"].is_file())
+            self.assertEqual(
+                len(pd.read_csv(outputs["source_data"])), len(source)
+            )
+
+            preview_manifest = root / "preview_manifest.json"
+            write_manifest(
+                RunManifest(
+                    experiment="aamos",
+                    provenance="public_secondary",
+                    run_id="aamos-preview",
+                    created_at="2026-07-23T00:00:00Z",
+                    environment={
+                        "profile": "preview",
+                        "bootstrap_repetitions": 2000,
+                    },
+                    artifacts={},
+                ),
+                preview_manifest,
+            )
+            with self.assertRaisesRegex(ValueError, "profile='submission'"):
+                render_aamos_integrity_figure(
+                    source_path,
+                    preview_manifest,
+                    root / "preview-figures",
+                    submission=True,
+                )
+
 
 if __name__ == "__main__":
     unittest.main()

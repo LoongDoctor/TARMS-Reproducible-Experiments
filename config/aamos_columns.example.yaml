@@ -1,0 +1,13 @@
+# Copy this file and replace every source-column value with the exact column
+# name in the author-confirmed, derived AAMOS patient-day table.
+columns:
+  participant_id: participant_id
+  date: patient_day
+  clean_priority: clean_management_priority
+  eligible: analysis_eligible
+
+source_metadata:
+  dataset_doi: 10.7488/ds/3775
+  dataset_version: public phase-2 release
+  patient_day_rule: author-confirmed derivation required
+  missing_value_rule: author-confirmed rule required

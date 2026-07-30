@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software or its bundled data, please cite the associated TARMS work and this software release."
 title: "TARMS Reproducible Experiments"
 type: software
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-07-23
 license: Apache-2.0
 authors:
@@ -22,3 +22,5 @@ keywords:
   - medical Internet of Things
   - Merkle tree
   - Hyperledger Fabric
+  - AAMOS-00
+  - public secondary data

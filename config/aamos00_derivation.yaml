@@ -1,0 +1,70 @@
+version: 1
+
+source:
+  participant_column: user_key
+  relative_day_column: date
+  daily_questionnaire:
+    filename: anonym_aamos00_dailyquestionnaire.csv
+    required: true
+  modalities:
+    peakflow:
+      filename: anonym_aamos00_peakflow.csv
+      required: false
+      count_field: peakflow_readings
+    inhaler:
+      filename: anonym_aamos00_smartinhaler.csv
+      required: false
+      count_field: inhaler_events
+
+priority:
+  rule: sum_boolean_true
+  reader_facing_label: derived three-item symptom count
+  symptom_columns:
+    - daily_night_symp
+    - daily_day_symp
+    - daily_limit_activity
+  missing_policy: retain_ineligible
+
+payload:
+  daily_columns:
+    - daily_night_symp
+    - daily_day_symp
+    - daily_limit_activity
+    - daily_prev_inhaler
+    - daily_relief_inhaler
+    - daily_triggers
+  include_modality_counts: true
+
+flow:
+  exclude_negative_modality_days: true
+
+data_contract:
+  observed:
+    - configured daily questionnaire payload columns
+  derived:
+    - configured modality event counts and presence derived from source rows
+    - eligible
+    - clean_priority (derived three-item symptom count)
+  synthetic:
+    - all TARMS protocol metadata
+
+official_release:
+  doi: 10.7488/ds/3775
+  participants: 22
+  any_modality_participant_days: 2054
+  selected_analysis_source_sha256:
+    aamos00_data_dictionary.xlsx: 0d50002843b80b75db2a764ffd0e0a8139f881c1cf84b2ca6f8956ab5884bcbc
+    anonym_aamos00_dailyquestionnaire.csv: 8133aeba38c2bb5db0027731e64c09f7c2436e55fa25d845665786db88820f24
+    anonym_aamos00_peakflow.csv: 0b211e61d4aaa4613d25e95777af03ff535767b744ef79f38ef2722d2374ba83
+    anonym_aamos00_smartinhaler.csv: 925ea383539d14cefb0f92d52c1a254c1316271185f04f07de4c08281414dd9a
+    anonym_aamos00_weeklyquestionnaire.csv: 697e6d21f3d61145fec881345d9a6682ac9e95f27d4da2ee0a2dc63ec55f0eba
+
+analysis_derivation_expectations:
+  participants: 22
+  daily_questionnaire_participant_days: 1583
+  eligible_three_item_days: 1582
+  priority_counts:
+    "0": 346
+    "1": 531
+    "2": 491
+    "3": 214

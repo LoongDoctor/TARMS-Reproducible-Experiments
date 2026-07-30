@@ -24,10 +24,10 @@ export FABRIC_CFG_PATH="${FABRIC_SAMPLES_DIR}/config"
 export IMAGE_TAG="2.5.16"
 export CA_IMAGE_TAG="1.5.17"
 
-NPM_CONFIG_CACHE="${EXPERIMENTS_ROOT}/.cache/npm" \
-  npm --prefix "${EXPERIMENTS_ROOT}/fabric/chaincode" ci --ignore-scripts --no-audit --no-fund
-NPM_CONFIG_CACHE="${EXPERIMENTS_ROOT}/.cache/npm" \
-  npm --prefix "${EXPERIMENTS_ROOT}/fabric/client" ci --ignore-scripts --no-audit --no-fund
+NPM_CONFIG_CACHE="${EXPERIMENTS_ROOT}/../tmp/npm-cache" \
+  npm --prefix "${EXPERIMENTS_ROOT}/fabric/chaincode" install --ignore-scripts --no-audit --no-fund
+NPM_CONFIG_CACHE="${EXPERIMENTS_ROOT}/../tmp/npm-cache" \
+  npm --prefix "${EXPERIMENTS_ROOT}/fabric/client" install --ignore-scripts --no-audit --no-fund
 
 cd "${TEST_NETWORK}"
 "${NETWORK_SCRIPT}" down

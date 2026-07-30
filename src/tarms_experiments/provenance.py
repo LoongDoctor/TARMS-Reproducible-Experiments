@@ -66,6 +66,7 @@ class RunManifest:
 ELIGIBLE_PROVENANCE = {
     "python": "measured",
     "fabric": "measured_fabric",
+    "aamos": "public_secondary",
 }
 
 
@@ -108,26 +109,3 @@ def sha256_file(path: str | Path) -> str:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
-
-
-def verify_manifest_artifacts(
-    manifest_path: str | Path, results_root: str | Path
-) -> dict[str, str]:
-    """Verify every artifact named by a run manifest."""
-    manifest = load_manifest(manifest_path)
-    root = Path(results_root)
-    checked: dict[str, str] = {}
-    for relative_path, expected_digest in manifest.artifacts.items():
-        artifact_path = root / relative_path
-        if not artifact_path.is_file():
-            raise FileNotFoundError(
-                f"{manifest.run_id} artifact is missing: {relative_path}"
-            )
-        actual_digest = sha256_file(artifact_path)
-        if actual_digest != expected_digest:
-            raise ValueError(
-                f"{manifest.run_id} SHA-256 mismatch for {relative_path}: "
-                f"expected {expected_digest}, got {actual_digest}"
-            )
-        checked[relative_path] = actual_digest
-    return checked

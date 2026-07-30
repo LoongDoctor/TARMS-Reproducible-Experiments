@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tarms-experiments"
-version = "1.0.0"
+version = "0.1.0"
 description = "Reproducible experiments for TARMS"
 requires-python = ">=3.12"
 dependencies = [
@@ -12,6 +12,8 @@ dependencies = [
   "matplotlib>=3.10",
   "numpy>=2.3",
   "pandas>=2.2",
+  "PyYAML>=6.0",
+  "scipy>=1.17",
   "SciencePlots>=2.1",
 ]
 

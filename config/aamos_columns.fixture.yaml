@@ -1,0 +1,11 @@
+columns:
+  participant_id: participant
+  date: date
+  clean_priority: priority
+  eligible: eligible
+
+source_metadata:
+  dataset_doi: fixture
+  dataset_version: unit-test fixture
+  patient_day_rule: one fixture row per participant-day
+  missing_value_rule: no missing values

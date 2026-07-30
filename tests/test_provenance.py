@@ -35,6 +35,7 @@ class ProvenanceGateTests(unittest.TestCase):
         cases = [
             ("python", "measured"),
             ("fabric", "measured_fabric"),
+            ("aamos", "public_secondary"),
         ]
         manifests = [
             RunManifest(

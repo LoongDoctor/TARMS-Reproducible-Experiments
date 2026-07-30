@@ -1,0 +1,81 @@
+{
+  "data_contract": {
+    "derived": [
+      "configured modality event counts and presence derived from source rows",
+      "eligible",
+      "clean_priority (derived three-item symptom count)"
+    ],
+    "observed": [
+      "configured daily questionnaire payload columns"
+    ],
+    "synthetic": [
+      "all TARMS protocol metadata"
+    ]
+  },
+  "derivation": {
+    "config_canonical_sha256": "37665ed58cb0e42242624a310351f7d3920e4815a7fe55f79848ec4f6557e1fe",
+    "missing_policy": "retain_ineligible",
+    "priority_columns": [
+      "daily_night_symp",
+      "daily_day_symp",
+      "daily_limit_activity"
+    ],
+    "priority_rule": "sum_boolean_true"
+  },
+  "eligible_participant_days": 1582,
+  "modalities": {
+    "inhaler": {
+      "excluded_negative_day_rows": 23,
+      "included_rows": 2881,
+      "participant_days_with_records": 688,
+      "questionnaire_days_with_records": 552,
+      "source_present": true,
+      "source_rows": 2904
+    },
+    "peakflow": {
+      "excluded_negative_day_rows": 3,
+      "included_rows": 1513,
+      "participant_days_with_records": 1097,
+      "questionnaire_days_with_records": 943,
+      "source_present": true,
+      "source_rows": 1516
+    }
+  },
+  "participant_days": 1583,
+  "participants": 22,
+  "priority_counts": {
+    "0": 346,
+    "1": 531,
+    "2": 491,
+    "3": 214
+  },
+  "relative_day_max": 183,
+  "relative_day_min": 0,
+  "source_files": [
+    {
+      "bytes": 24634,
+      "name": "aamos00_data_dictionary.xlsx",
+      "sha256": "0d50002843b80b75db2a764ffd0e0a8139f881c1cf84b2ca6f8956ab5884bcbc"
+    },
+    {
+      "bytes": 64309,
+      "name": "anonym_aamos00_dailyquestionnaire.csv",
+      "sha256": "8133aeba38c2bb5db0027731e64c09f7c2436e55fa25d845665786db88820f24"
+    },
+    {
+      "bytes": 53386,
+      "name": "anonym_aamos00_peakflow.csv",
+      "sha256": "0b211e61d4aaa4613d25e95777af03ff535767b744ef79f38ef2722d2374ba83"
+    },
+    {
+      "bytes": 68387,
+      "name": "anonym_aamos00_smartinhaler.csv",
+      "sha256": "925ea383539d14cefb0f92d52c1a254c1316271185f04f07de4c08281414dd9a"
+    },
+    {
+      "bytes": 16218,
+      "name": "anonym_aamos00_weeklyquestionnaire.csv",
+      "sha256": "697e6d21f3d61145fec881345d9a6682ac9e95f27d4da2ee0a2dc63ec55f0eba"
+    }
+  ]
+}
