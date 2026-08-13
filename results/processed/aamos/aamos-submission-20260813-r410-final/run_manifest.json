@@ -22,7 +22,7 @@
     },
     "fig_aamos_protocol_integrity_source_data.csv": {
       "bytes": 211381,
-      "sha256": "5606d1f0b83d5a4839a9733823cb94d7f6b5cd39ebcd7dcf39c94f39cb385a69"
+      "sha256": "b78c46e4648bb1e6728aeeaec4e95e4d0e1c6ec0e695909989319fd660ff1f5e"
     },
     "injection_manifest.csv": {
       "bytes": 84504805,
@@ -30,7 +30,7 @@
     },
     "metric_summary.csv": {
       "bytes": 2728674,
-      "sha256": "e586b922acc9cc2b8acac89ce6427e487338345c3e94bf410cecb6b413ad714e"
+      "sha256": "8e5e1c767049601d51657c4b4baa5c93d082fd8423709ab45492c861cc433a78"
     },
     "paired_contrasts.csv": {
       "bytes": 2096217,
@@ -55,9 +55,9 @@
     "boundary_decisions.csv": "4715649da7859da661e039410856f4e38c3f642e76151399c83fcf3069d3c2b7",
     "boundary_manifest.csv": "14610f6c8ecc94493e92646e4c0151e275d960402274cfd5acc5d99ddc1c8229",
     "clean_decisions.csv": "8f58a1f0603d561d2e60d4e5a3e6bf839289ebbf7643f70308359df4fde2f5e6",
-    "fig_aamos_protocol_integrity_source_data.csv": "5606d1f0b83d5a4839a9733823cb94d7f6b5cd39ebcd7dcf39c94f39cb385a69",
+    "fig_aamos_protocol_integrity_source_data.csv": "b78c46e4648bb1e6728aeeaec4e95e4d0e1c6ec0e695909989319fd660ff1f5e",
     "injection_manifest.csv": "5c256b57226ffb778b3b8da512cff426a8c58699e58a9d555d720847d3f110ce",
-    "metric_summary.csv": "e586b922acc9cc2b8acac89ce6427e487338345c3e94bf410cecb6b413ad714e",
+    "metric_summary.csv": "8e5e1c767049601d51657c4b4baa5c93d082fd8423709ab45492c861cc433a78",
     "paired_contrasts.csv": "e9e0b4398a1fd24774ebe23119d5ee0690931b5877c52629d2f94033c8f9f27c",
     "participant_day_flow.json": "58746e02a94909136ca11abf4015451653762e5692cec492b063517693a0b372",
     "patient_days.csv": "9691e4eed845ba95c2d0ebd0f01ac3940aabfc4306e784be31c85df78c12e68c",
@@ -77,18 +77,18 @@
       "clean_decisions": 379680,
       "total_decisions": 2556960
     },
-    "peak_rss_delta_kib": 5240080,
-    "peak_rss_kib": 5316912,
+    "peak_rss_delta_kib": 5181120,
+    "peak_rss_kib": 5263648,
     "peak_rss_unit": "KiB",
-    "wall_time_seconds": 1599.1680832079146
+    "wall_time_seconds": 1560.305308708921
   },
   "controlled_source": {
     "derivation_config_member": "config/aamos00_derivation.yaml",
-    "identity_sha256": "a2404085bca40b3fc8a4f493ad5fc430e3d884cc8025b4d8c1f991dda4d61598",
+    "identity_sha256": "a2b986cfa5c859bd1691652834600d28f2ce81e6646d60d63ab31cd685ff2f8f",
     "member_count": 77,
-    "snapshot_sha256": "fb0ad5fea1e432aa2db121a013b79ed5419f409137d1890620108a26fbccbce6"
+    "snapshot_sha256": "88e6c5743dd6810a5e6c3dc84f8c0331e6345e98a63f0fae22fdfc696741beaa"
   },
-  "created_at": "2026-08-13T10:07:15.367931+00:00",
+  "created_at": "2026-08-13T11:21:02.514563+00:00",
   "dataset": {
     "analysis_participants": 22,
     "daily_questionnaire_participant_days": 1583,
@@ -173,7 +173,7 @@
       "legitimate_late_arrival",
       "canonical_reorder"
     ],
-    "code_archive_sha256": "a2404085bca40b3fc8a4f493ad5fc430e3d884cc8025b4d8c1f991dda4d61598",
+    "code_archive_sha256": "a2b986cfa5c859bd1691652834600d28f2ce81e6646d60d63ab31cd685ff2f8f",
     "derivation_config_basename": "aamos00_derivation.yaml",
     "derivation_config_canonical_sha256": "37665ed58cb0e42242624a310351f7d3920e4815a7fe55f79848ec4f6557e1fe",
     "derivation_config_file_sha256": "afdad4cef23c79307379e21011b1638ac91638f04b457dc21dc0be7888174baf",
@@ -7144,6 +7144,6 @@
     "unique_participants": 22
   },
   "provenance": "public_secondary",
-  "run_id": "aamos-submission-20260813-r410-local",
+  "run_id": "aamos-submission-20260813-r410-final",
   "schema_version": "1.0"
 }
