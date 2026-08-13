@@ -21,16 +21,16 @@
       "sha256": "8f58a1f0603d561d2e60d4e5a3e6bf839289ebbf7643f70308359df4fde2f5e6"
     },
     "fig_aamos_protocol_integrity_source_data.csv": {
-      "bytes": 210911,
-      "sha256": "443db2c727f068f12b1c11b1fd2649d2cc270c2ed07b25eea9d1d3717af3cf47"
+      "bytes": 211381,
+      "sha256": "5606d1f0b83d5a4839a9733823cb94d7f6b5cd39ebcd7dcf39c94f39cb385a69"
     },
     "injection_manifest.csv": {
       "bytes": 84504805,
       "sha256": "5c256b57226ffb778b3b8da512cff426a8c58699e58a9d555d720847d3f110ce"
     },
     "metric_summary.csv": {
-      "bytes": 2717554,
-      "sha256": "54df1a984ee75f02a9a4596a567564ae1c49cca43404c543a865c76dc1d3c792"
+      "bytes": 2728674,
+      "sha256": "e586b922acc9cc2b8acac89ce6427e487338345c3e94bf410cecb6b413ad714e"
     },
     "paired_contrasts.csv": {
       "bytes": 2096217,
@@ -55,9 +55,9 @@
     "boundary_decisions.csv": "4715649da7859da661e039410856f4e38c3f642e76151399c83fcf3069d3c2b7",
     "boundary_manifest.csv": "14610f6c8ecc94493e92646e4c0151e275d960402274cfd5acc5d99ddc1c8229",
     "clean_decisions.csv": "8f58a1f0603d561d2e60d4e5a3e6bf839289ebbf7643f70308359df4fde2f5e6",
-    "fig_aamos_protocol_integrity_source_data.csv": "443db2c727f068f12b1c11b1fd2649d2cc270c2ed07b25eea9d1d3717af3cf47",
+    "fig_aamos_protocol_integrity_source_data.csv": "5606d1f0b83d5a4839a9733823cb94d7f6b5cd39ebcd7dcf39c94f39cb385a69",
     "injection_manifest.csv": "5c256b57226ffb778b3b8da512cff426a8c58699e58a9d555d720847d3f110ce",
-    "metric_summary.csv": "54df1a984ee75f02a9a4596a567564ae1c49cca43404c543a865c76dc1d3c792",
+    "metric_summary.csv": "e586b922acc9cc2b8acac89ce6427e487338345c3e94bf410cecb6b413ad714e",
     "paired_contrasts.csv": "e9e0b4398a1fd24774ebe23119d5ee0690931b5877c52629d2f94033c8f9f27c",
     "participant_day_flow.json": "58746e02a94909136ca11abf4015451653762e5692cec492b063517693a0b372",
     "patient_days.csv": "9691e4eed845ba95c2d0ebd0f01ac3940aabfc4306e784be31c85df78c12e68c",
@@ -77,18 +77,18 @@
       "clean_decisions": 379680,
       "total_decisions": 2556960
     },
-    "peak_rss_delta_kib": 5141616,
-    "peak_rss_kib": 5212624,
+    "peak_rss_delta_kib": 5240080,
+    "peak_rss_kib": 5316912,
     "peak_rss_unit": "KiB",
-    "wall_time_seconds": 1491.3020314589958
+    "wall_time_seconds": 1599.1680832079146
   },
   "controlled_source": {
     "derivation_config_member": "config/aamos00_derivation.yaml",
-    "identity_sha256": "151ab08ba06642136f80da68963dd65e39458661842942c2600040ff39082ce9",
+    "identity_sha256": "a2404085bca40b3fc8a4f493ad5fc430e3d884cc8025b4d8c1f991dda4d61598",
     "member_count": 77,
-    "snapshot_sha256": "4eff8b0ab36a93e73a483d38cf80503549e749c6e1f7223be271bab5abbf11df"
+    "snapshot_sha256": "fb0ad5fea1e432aa2db121a013b79ed5419f409137d1890620108a26fbccbce6"
   },
-  "created_at": "2026-07-29T06:06:17.787587+00:00",
+  "created_at": "2026-08-13T10:07:15.367931+00:00",
   "dataset": {
     "analysis_participants": 22,
     "daily_questionnaire_participant_days": 1583,
@@ -173,7 +173,7 @@
       "legitimate_late_arrival",
       "canonical_reorder"
     ],
-    "code_archive_sha256": "151ab08ba06642136f80da68963dd65e39458661842942c2600040ff39082ce9",
+    "code_archive_sha256": "a2404085bca40b3fc8a4f493ad5fc430e3d884cc8025b4d8c1f991dda4d61598",
     "derivation_config_basename": "aamos00_derivation.yaml",
     "derivation_config_canonical_sha256": "37665ed58cb0e42242624a310351f7d3920e4815a7fe55f79848ec4f6557e1fe",
     "derivation_config_file_sha256": "afdad4cef23c79307379e21011b1638ac91638f04b457dc21dc0be7888174baf",
@@ -7144,6 +7144,6 @@
     "unique_participants": 22
   },
   "provenance": "public_secondary",
-  "run_id": "aamos-submission-20260729-v6-local",
+  "run_id": "aamos-submission-20260813-r410-local",
   "schema_version": "1.0"
 }

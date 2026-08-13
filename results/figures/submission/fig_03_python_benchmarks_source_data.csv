@@ -631,19 +631,19 @@ python-20260723T020649Z,4096,verify_batch,4096,128,measured,200,453.940594499999
 ,4096,,,,,200,,,,,,,8546.68400329828,c,signature_admission_throughput,,,8425.1608784767068,8583.1558008383381,,,,
 ,16,,,,,,,,,,,,,d,ledger_model,,,,,raw records,6144,384 B encoded event+signature per record,
 ,16,,,,,,,,,,,,,d,ledger_model,,,,,hash per record,768,32 B digest+16 B key/index per record,
-,16,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,612,"UTF-8 steady-state anchor JSON+latest-pointer JSON; includes nonempty prevAid, uriHash, and latest root",1
+,16,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,612,"UTF-8 version-2 successor anchor JSON+latest-state JSON; includes nonempty prevAid, uriHash, and latest root",2
 ,64,,,,,,,,,,,,,d,ledger_model,,,,,raw records,24576,384 B encoded event+signature per record,
 ,64,,,,,,,,,,,,,d,ledger_model,,,,,hash per record,3072,32 B digest+16 B key/index per record,
-,64,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,612,"UTF-8 steady-state anchor JSON+latest-pointer JSON; includes nonempty prevAid, uriHash, and latest root",1
+,64,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,612,"UTF-8 version-2 successor anchor JSON+latest-state JSON; includes nonempty prevAid, uriHash, and latest root",2
 ,256,,,,,,,,,,,,,d,ledger_model,,,,,raw records,98304,384 B encoded event+signature per record,
 ,256,,,,,,,,,,,,,d,ledger_model,,,,,hash per record,12288,32 B digest+16 B key/index per record,
-,256,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,613,"UTF-8 steady-state anchor JSON+latest-pointer JSON; includes nonempty prevAid, uriHash, and latest root",1
+,256,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,613,"UTF-8 version-2 successor anchor JSON+latest-state JSON; includes nonempty prevAid, uriHash, and latest root",2
 ,1024,,,,,,,,,,,,,d,ledger_model,,,,,raw records,393216,384 B encoded event+signature per record,
 ,1024,,,,,,,,,,,,,d,ledger_model,,,,,hash per record,49152,32 B digest+16 B key/index per record,
-,1024,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,614,"UTF-8 steady-state anchor JSON+latest-pointer JSON; includes nonempty prevAid, uriHash, and latest root",1
+,1024,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,614,"UTF-8 version-2 successor anchor JSON+latest-state JSON; includes nonempty prevAid, uriHash, and latest root",2
 ,2048,,,,,,,,,,,,,d,ledger_model,,,,,raw records,786432,384 B encoded event+signature per record,
 ,2048,,,,,,,,,,,,,d,ledger_model,,,,,hash per record,98304,32 B digest+16 B key/index per record,
-,2048,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,614,"UTF-8 steady-state anchor JSON+latest-pointer JSON; includes nonempty prevAid, uriHash, and latest root",1
+,2048,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,614,"UTF-8 version-2 successor anchor JSON+latest-state JSON; includes nonempty prevAid, uriHash, and latest root",2
 ,4096,,,,,,,,,,,,,d,ledger_model,,,,,raw records,1572864,384 B encoded event+signature per record,
 ,4096,,,,,,,,,,,,,d,ledger_model,,,,,hash per record,196608,32 B digest+16 B key/index per record,
-,4096,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,614,"UTF-8 steady-state anchor JSON+latest-pointer JSON; includes nonempty prevAid, uriHash, and latest root",1
+,4096,,,,,,,,,,,,,d,ledger_model,,,,,TARMS anchor,614,"UTF-8 version-2 successor anchor JSON+latest-state JSON; includes nonempty prevAid, uriHash, and latest root",2
