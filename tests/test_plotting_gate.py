@@ -13,6 +13,8 @@ sys.path.insert(0, str(PROJECT_ROOT / "tests"))
 
 from aamos_submission_fixture import submission_contract  # noqa: E402
 from tarms_experiments.plotting import (  # noqa: E402
+    AAMOS_FIGURE_LABELS,
+    COMPONENT_FIGURE_LABELS,
     FABRIC_INSTALL_OPERATION,
     SIGNATURE_ADMISSION_TITLE,
     SIGNATURE_ADMISSION_YLABEL,
@@ -35,6 +37,28 @@ from tarms_experiments.stats import summarize_observations  # noqa: E402
 
 
 class PlottingGateTests(unittest.TestCase):
+    def test_submission_figure_labels_match_manuscript_estimands(self):
+        self.assertEqual(
+            COMPONENT_FIGURE_LABELS["Latest CAS"],
+            "Local aid/version CAS",
+        )
+        self.assertEqual(
+            COMPONENT_FIGURE_LABELS["stale_latest_pointer"],
+            "stale expected aid",
+        )
+        self.assertEqual(
+            AAMOS_FIGURE_LABELS["clean_case"],
+            "clean-case rejection",
+        )
+        self.assertEqual(
+            AAMOS_FIGURE_LABELS["all_checks_rejection"],
+            "experimental all_checks rejection (0–1)",
+        )
+        self.assertEqual(
+            AAMOS_FIGURE_LABELS["paired_rejection_difference"],
+            "paired rejection-proportion difference",
+        )
+
     def test_fabric_figures_use_the_atomic_install_operation_name(self):
         self.assertEqual(FABRIC_INSTALL_OPERATION, "InstallAnchorCAS")
 

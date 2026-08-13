@@ -59,6 +59,18 @@ LIGHT_GREY = "#D9DEE2"
 FABRIC_INSTALL_OPERATION = "InstallAnchorCAS"
 SIGNATURE_ADMISSION_TITLE = "Signature + admission throughput"
 SIGNATURE_ADMISSION_YLABEL = "Signature + admission records s$^{-1}$"
+COMPONENT_FIGURE_LABELS = {
+    "Signature": "Signature",
+    "AcceptOnce": "AcceptOnce",
+    "Merkle proof": "Merkle proof",
+    "Latest CAS": "Local aid/version CAS",
+    "stale_latest_pointer": "stale expected aid",
+}
+AAMOS_FIGURE_LABELS = {
+    "clean_case": "clean-case rejection",
+    "all_checks_rejection": "experimental all_checks rejection (0–1)",
+    "paired_rejection_difference": "paired rejection-proportion difference",
+}
 
 
 STAGE_STYLE = {
@@ -294,7 +306,10 @@ def render_component_conformance_figure(
         "stale_latest_pointer",
         "skipped_version",
     ]
-    case_labels = [case.replace("_", " ") for case in cases]
+    case_labels = [
+        COMPONENT_FIGURE_LABELS.get(case, case.replace("_", " "))
+        for case in cases
+    ]
     matrix = np.full((len(cases), len(components)), np.nan)
     annotations = {}
     for _, row in summary.iterrows():
@@ -325,7 +340,12 @@ def render_component_conformance_figure(
     cmap.set_bad("#F3F4F5")
     norm = BoundaryNorm([-1.5, -0.5, 0.5, 1.5], cmap.N)
     ax_a.imshow(np.ma.masked_invalid(matrix), cmap=cmap, norm=norm, aspect="auto")
-    ax_a.set_xticks(range(len(components)), components, rotation=25, ha="right")
+    ax_a.set_xticks(
+        range(len(components)),
+        [COMPONENT_FIGURE_LABELS[value] for value in components],
+        rotation=25,
+        ha="right",
+    )
     ax_a.set_yticks(range(len(cases)), case_labels)
     ax_a.set_title("Predicate outcome by constructed case", loc="left")
     for (row_index, column_index), annotation in annotations.items():
@@ -2484,7 +2504,7 @@ def render_aamos_integrity_figure(
         control_header_axis.text(
             0.0,
             0.5,
-            "Boundary controls\nAll-check rejection (0–1)",
+            f"Boundary controls\n{AAMOS_FIGURE_LABELS['all_checks_rejection']}",
             transform=control_header_axis.transAxes,
             ha="left",
             va="center",
@@ -2512,7 +2532,11 @@ def render_aamos_integrity_figure(
             aspect="auto",
         )
         clean_axis.set_xticks([])
-        clean_axis.set_yticks([0], ["clean FR"], fontsize=5.8)
+        clean_axis.set_yticks(
+            [0],
+            [AAMOS_FIGURE_LABELS["clean_case"]],
+            fontsize=5.8,
+        )
         clean_axis.tick_params(axis="y", pad=2)
     else:
         clean_axis.set_axis_off()
@@ -2582,7 +2606,7 @@ def render_aamos_integrity_figure(
         right_axis,
         mechanism,
         color=ORANGE,
-        xlabel="Matched-config. rejection RD",
+        xlabel=AAMOS_FIGURE_LABELS["paired_rejection_difference"],
         xlim=(-1.02, 1.02),
         zero=True,
     )
