@@ -136,12 +136,20 @@ class PlottingGateTests(unittest.TestCase):
         self.assertTrue(pivot["hash per record"].is_monotonic_increasing)
         self.assertGreater(pivot.loc[4096, "raw records"], pivot.loc[4096, "hash per record"])
         self.assertGreater(pivot.loc[4096, "hash per record"], pivot.loc[4096, "TARMS anchor"])
+        self.assertEqual(pivot.loc[4096, "TARMS anchor"], 614)
         tarms_rows = modeled.loc[modeled["strategy"] == "TARMS anchor"]
-        self.assertEqual(set(tarms_rows["anchor_version"].dropna()), {1})
+        self.assertEqual(set(tarms_rows["anchor_version"].dropna()), {2})
+        self.assertEqual(
+            set(tarms_rows["assumption"]),
+            {
+                "UTF-8 version-2 successor anchor JSON+latest-state JSON; "
+                "includes nonempty prevAid, uriHash, and latest root"
+            },
+        )
         anchor = {
             "aid": "a" * 64,
             "kappa": "patient-000001|2026-07-22T00:00Z",
-            "version": 1,
+            "version": 2,
             "root": "b" * 64,
             "prevAid": "d" * 64,
             "recordCount": 4096,
@@ -151,7 +159,7 @@ class PlottingGateTests(unittest.TestCase):
         latest = {
             "kappa": anchor["kappa"],
             "aid": anchor["aid"],
-            "version": 1,
+            "version": 2,
             "root": anchor["root"],
         }
         expected = len(json.dumps(anchor, separators=(",", ":")).encode()) + len(

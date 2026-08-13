@@ -104,7 +104,7 @@ def model_ledger_bytes(batch_sizes: Iterable[int]) -> pd.DataFrame:
         anchor = {
             "aid": "a" * 64,
             "kappa": "patient-000001|2026-07-22T00:00Z",
-            "version": 1,
+            "version": 2,
             "root": "b" * 64,
             "prevAid": "d" * 64,
             "recordCount": batch_size,
@@ -114,7 +114,7 @@ def model_ledger_bytes(batch_sizes: Iterable[int]) -> pd.DataFrame:
         latest = {
             "kappa": anchor["kappa"],
             "aid": anchor["aid"],
-            "version": 1,
+            "version": 2,
             "root": anchor["root"],
         }
         anchor_bytes = len(json.dumps(anchor, separators=(",", ":")).encode())
@@ -140,10 +140,10 @@ def model_ledger_bytes(batch_sizes: Iterable[int]) -> pd.DataFrame:
                     "strategy": "TARMS anchor",
                     "bytes": anchor_bytes + latest_bytes,
                     "assumption": (
-                        "UTF-8 steady-state anchor JSON+latest-pointer JSON; "
+                        "UTF-8 version-2 successor anchor JSON+latest-state JSON; "
                         "includes nonempty prevAid, uriHash, and latest root"
                     ),
-                    "anchor_version": 1,
+                    "anchor_version": 2,
                 },
             ]
         )
